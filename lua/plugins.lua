@@ -48,4 +48,7 @@ return require('packer').startup(function()
       }
     end
   }
+
+  -- Language server
+  use 'neovim/nvim-lspconfig'
 end)
