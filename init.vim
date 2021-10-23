@@ -1,16 +1,6 @@
 call plug#begin()
-  " Code completion
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/nvim-cmp'
-  " For vsnip users.
-  Plug 'hrsh7th/cmp-vsnip'
-  Plug 'hrsh7th/vim-vsnip'
-
   " Icons for completition
   Plug 'onsails/lspkind-nvim'
-
-	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
   " Indentation
   Plug 'lukas-reineke/indent-blankline.nvim'
