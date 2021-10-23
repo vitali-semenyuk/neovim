@@ -10,3 +10,12 @@ vim.opt.tabstop = 2      -- number of visual spaces per TAB
 vim.opt.softtabstop = 2  -- number of spaces in tab when editing
 vim.opt.shiftwidth = 2   -- number of spaces to use for autoindent
 vim.opt.expandtab = true -- expand tab to spaces so that tabs are spaces
+
+vim.g.strip_whitespace_on_save = 1
+vim.g.strip_whitespace_confirm = 0
+
+vim.opt.clipboard:append('unnamedplus')
+
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")

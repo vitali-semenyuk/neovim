@@ -53,8 +53,8 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
 
   use {
-    'nvim-treesitter/nvim-treesitter', 
-    run = ':TSUpdate' 
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
   }
 
   -- Autocomplete
@@ -67,4 +67,8 @@ return require('packer').startup(function()
 
   -- Icons for completition
   use 'onsails/lspkind-nvim'
+
+  use 'tpope/vim-surround'
+  use 'jiangmiao/auto-pairs'
+  use 'ntpeters/vim-better-whitespace'
 end)
