@@ -30,7 +30,16 @@ call plug#begin()
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
 
-	" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+  " Icons for completition
+  Plug 'onsails/lspkind-nvim'
+
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
+  " Indentation
+  Plug 'lukas-reineke/indent-blankline.nvim'
+
+  " Start screen
+  Plug 'mhinz/vim-startify'
 call plug#end()
 
 set number
@@ -68,10 +77,7 @@ local cmp = require'cmp'
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+      vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   mapping = {
@@ -83,13 +89,13 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'vsnip' }, -- For vsnip users.
-    -- { name = 'luasnip' }, -- For luasnip users.
-    -- { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
+    { name = 'vsnip' },
   }, {
     { name = 'buffer' },
-  })
+  }),
+  formatting = {
+    format = require('lspkind').cmp_format(),
+  },
 })
 
 local nvim_lsp = require('lspconfig')
@@ -145,6 +151,17 @@ EOF
 
 lua << EOF
 require('gitsigns').setup()
+EOF
+
+lua << EOF
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
+
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+    show_current_context = true,
+}
 EOF
 
 " Find files using Telescope command-line sugar.
