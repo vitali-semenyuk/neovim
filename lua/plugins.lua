@@ -38,13 +38,13 @@ return require('packer').startup(function()
     config = function()
       require('telescope').setup {
         defaults = {
-	  mappings = {
-	    i = {
-	      ['<C-j>'] = 'move_selection_next',
-	      ['<C-k>'] = 'move_selection_previous',
-	    }
-	  }
-	}
+          mappings = {
+            i = {
+              ['<C-j>'] = 'move_selection_next',
+              ['<C-k>'] = 'move_selection_previous',
+            }
+          }
+        }
       }
     end
   }
@@ -59,10 +59,12 @@ return require('packer').startup(function()
 
   -- Autocomplete
   use 'neovim/nvim-lspconfig'
-use 'hrsh7th/cmp-nvim-lsp'
-use 'hrsh7th/cmp-buffer'
-use 'hrsh7th/nvim-cmp'
-use 'hrsh7th/cmp-vsnip'
-use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
 
+  -- Icons for completition
+  use 'onsails/lspkind-nvim'
 end)
