@@ -1,21 +1,12 @@
 call plug#begin()
   " General configuration
-	" Color scheme
-	Plug 'joshdick/onedark.vim'
-
 	" Search
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
 
-	" Comments
-	Plug 'tpope/vim-commentary'
-
 	" Status line
 	Plug 'itchyny/lightline.vim'
 
-	" Git
-  Plug 'tpope/vim-fugitive'
-	Plug 'lewis6991/gitsigns.nvim'
 
 	" Language server
 	Plug 'neovim/nvim-lspconfig'
