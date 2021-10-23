@@ -1,12 +1,6 @@
 call plug#begin()
   " General configuration
-	" Search
 	Plug 'nvim-lua/plenary.nvim'
-	Plug 'nvim-telescope/telescope.nvim'
-
-	" Status line
-	Plug 'itchyny/lightline.vim'
-
 
 	" Language server
 	Plug 'neovim/nvim-lspconfig'
@@ -26,9 +20,6 @@ call plug#begin()
 
   " Indentation
   Plug 'lukas-reineke/indent-blankline.nvim'
-
-  " Start screen
-  Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Clipboard settings, always use clipboard for all delete, yank, change, put
@@ -45,12 +36,6 @@ set tabstop=2       " number of visual spaces per TAB
 set softtabstop=2   " number of spaces in tab when editing
 set shiftwidth=2    " number of spaces to use for autoindent
 set expandtab       " expand tab to spaces so that tabs are spaces
-
-colorscheme onedark
-
-let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ }
 
 lua << EOF
 -- Setup nvim-cmp.
@@ -145,10 +130,4 @@ require("indent_blankline").setup {
     show_current_context = true,
 }
 EOF
-
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
