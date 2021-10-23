@@ -71,4 +71,16 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'jiangmiao/auto-pairs'
   use 'ntpeters/vim-better-whitespace'
+
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('indent_blankline').setup {
+        space_char_blankline = ' ',
+        show_current_context = true,
+      }
+    end
+  }
+
+  use 'sheerun/vim-polyglot'
 end)

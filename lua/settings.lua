@@ -1,5 +1,6 @@
 vim.opt.number = true
 vim.opt.cursorline = true
+vim.opt.hidden = true
 
 -- Split window below/right when creating horizontal/vertical windows
 vim.opt.splitbelow = true

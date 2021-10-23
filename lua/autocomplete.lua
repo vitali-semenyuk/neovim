@@ -4,7 +4,7 @@ local cmp = require'cmp'
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) 
+      vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   mapping = {
@@ -16,7 +16,7 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'vsnip' }, 
+    { name = 'vsnip' },
   }, {
     { name = 'buffer' },
   }),
@@ -64,7 +64,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'tsserver' }
+local servers = { 'pyright', 'tsserver', 'solargraph' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
