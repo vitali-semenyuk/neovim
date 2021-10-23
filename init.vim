@@ -1,7 +1,5 @@
 call plug#begin()
   " General configuration
-	Plug 'tpope/vim-sensible'
-
 	" Color scheme
 	Plug 'joshdick/onedark.vim'
 
@@ -41,13 +39,6 @@ call plug#begin()
   " Start screen
   Plug 'mhinz/vim-startify'
 call plug#end()
-
-set number
-
-set cursorline
-
-" Split window below/right when creating horizontal/vertical windows
-set splitbelow splitright
 
 " Clipboard settings, always use clipboard for all delete, yank, change, put
 " operation, see https://stackoverflow.com/q/30691466/6064933
