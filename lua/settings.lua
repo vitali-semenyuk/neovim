@@ -20,3 +20,8 @@ vim.opt.clipboard:append('unnamedplus')
 vim.opt.list = true
 vim.opt.listchars:append("space:⋅")
 vim.opt.listchars:append("eol:↴")
+
+vim.g.startify_lists = {
+  { type = 'dir', header = {'Recently opened files'} },
+}
+vim.g.startify_change_to_dir = false
