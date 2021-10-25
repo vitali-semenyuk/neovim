@@ -1,6 +1,9 @@
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.hidden = true
+vim.opt.mouse = 'a'
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Split window below/right when creating horizontal/vertical windows
 vim.opt.splitbelow = true

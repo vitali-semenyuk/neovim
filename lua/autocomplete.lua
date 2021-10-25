@@ -64,7 +64,12 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'tsserver', 'solargraph' }
+local servers = {
+  'pyright',
+  'eslint',
+  'tsserver',
+  'solargraph'
+}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -74,3 +79,7 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
+-- ESlint fix on save
+vim.api.nvim_command('autocmd BufWritePre *.js EslintFixAll')
+-- autocmd BufWritePre <buffer> <cmd>EslintFixAll<CR>
