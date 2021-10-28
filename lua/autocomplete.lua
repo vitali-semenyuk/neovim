@@ -83,3 +83,5 @@ end
 -- ESlint fix on save
 vim.api.nvim_command('autocmd BufWritePre *.js EslintFixAll')
 -- autocmd BufWritePre <buffer> <cmd>EslintFixAll<CR>
+
+vim.g.user_emmet_leader_key = '<C-Z>'
